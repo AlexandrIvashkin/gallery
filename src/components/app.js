@@ -1,14 +1,13 @@
 import React from 'react';
-var connect = require("react-redux").connect;
-var actions = require("./redux/actions.js");
+import actions from './redux/actions.js';
+import { connect } from 'react-redux';
+import './1.scss';
 
-import "./1.scss";
+import strImg from '../img/str.png';
 
-import strImg from "../img/str.png";
-
-import AddImg from "./addImg.js";
-import DelImg from "./delImg.js";
-import EditComment from "./editComment.js";
+import AddImg from './addImg.js';
+import DelImg from './delImg.js';
+import EditComment from './editComment.js';
 
 class App extends React.Component {
 	constructor(props) {
@@ -18,19 +17,19 @@ class App extends React.Component {
 	};
 
 	visibleDelImg(e){
-		var imgContainer = e.currentTarget;
-		$(imgContainer).find(".elementsControl").css({"display": "block"})
+		let imgContainer = e.currentTarget;
+		$(imgContainer).find('.elementsControl').css({'display': 'block'})
 	}
 
 	hiddenDelImg(e){
-		$(".elementsControl").css({"display": "none"})
+		$('.elementsControl').css({'display': 'none'})
 	}
 
 	imgGallery(obj, index){
 		return(
 			<div>
-				<a href={obj.img} data-toggle="lightbox" data-gallery="example-gallery" >
-					<img src={obj.img} className="img-fluid"/>
+				<a href={obj.img} data-toggle='lightbox' data-gallery='example-gallery' >
+					<img src={obj.img} className='img-fluid'/>
 				</a>
 				<EditComment title={obj.title} editComment ={this.props.editComment} index={index}/>
 			</div>
@@ -38,10 +37,10 @@ class App extends React.Component {
 	}
 
 	getDateGallery(dateStorage) {
-		var dataGellery = dateStorage.map((obj, index)=> (
-			<div key={index} className="col-xs-12 col-sm-6 col-md-4" onMouseOver={this.visibleDelImg} onMouseOut={this.hiddenDelImg}>
+		let dataGellery = dateStorage.map((obj, index)=> (
+			<div key={index} className='col-xs-12 col-sm-6 col-md-4' onMouseOver={this.visibleDelImg} onMouseOut={this.hiddenDelImg}>
 				{this.imgGallery(obj, index)}
-				<div className="elementsControl">
+				<div className='elementsControl'>
 					<DelImg delImg={this.props.delImg} index={index}/>
 					<div id='str'><img src={strImg}/></div>
 				</div>
@@ -51,8 +50,8 @@ class App extends React.Component {
 
 	render(){
 		return (
-			<div className="gallery container">
-		        <div className="row galleryContainer" id="sortContainer">
+			<div className='gallery container'>
+		        <div className='row galleryContainer' id='sortContainer'>
 					{this.getDateGallery(this.props.gallery)}
 		       	</div>
 		       	<AddImg visible={this.props.visible} showMenu = {this.props.showMenu} addImg = {this.props.addImg}/>
@@ -67,7 +66,7 @@ $(document).on('click', '[data-toggle="lightbox"]', function(event) {
 });
 
 $(function() {
-    $('#sortContainer').sortable({placeholder: "borderForDADContainer"}); 
+    $('#sortContainer').sortable({placeholder: 'borderForDADContainer'}); 
 });
 
 function mapStateToProps (state) {

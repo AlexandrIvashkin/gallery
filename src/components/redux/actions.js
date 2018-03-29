@@ -1,30 +1,30 @@
-var redux = require("redux");
+import redux from 'redux';
 
-var showMenu = function( visible){
+const showMenu = function( visible){
 	return {
-		type: "SHOW_MENU",
+		type: 'SHOW_MENU',
 		visible
 	}
 };
 
-var addImg = function( url, comment){
+const addImg = function( url, comment){
 	return {
-		type: "ADD_IMG",
+		type: 'ADD_IMG',
 		url,
 		comment
 	}
 };
 
-var delImg = function( index){
+const delImg = function( index){
 	return {
-		type: "DEL_IMG",
+		type: 'DEL_IMG',
 		index
 	}
 };
 
-var editComment = function( comment, index ){
+const editComment = function( comment, index ){
 	return {
-		type: "EDIT_COMMENT",
+		type: 'EDIT_COMMENT',
 		comment,
 		index
 	}

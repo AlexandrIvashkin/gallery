@@ -9,13 +9,13 @@ class DelImg extends React.Component {
 
 	delImg(){
 		{/*closed form for edit comment*/}
-		$(".imgComment form").css({"display": "none"});
+		$('.imgComment form').css({'display': 'none'});
 		this.props.delImg(this.props.index);
 	}
 
 	render(){
 		return(
-			<div className="delImg" onClick={this.delImg}>X</div>
+			<div className='delImg' onClick={this.delImg}>X</div>
 		)
 	}
 }

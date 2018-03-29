@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --env production",
     "dev": "webpack-dev-server --env development --hot --open",
-    "prod": "node server.js"
+    "prod": "babel-node server.js"
   },
   "keywords": [],
   "author": "",

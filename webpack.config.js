@@ -1,16 +1,16 @@
-var path = require('path');
+const path = require('path');
 const webpack = require('webpack');
  
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var merge = require('webpack-merge');
-var devserver = require('./webpack/devserver');
-var ExtractPlugin = require('./webpack/extractPlugin');
-var Uglify = require('./webpack/uglify');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const merge = require('webpack-merge');
+const devserver = require('./webpack/devserver');
+const ExtractPlugin = require('./webpack/extractPlugin');
+const Uglify = require('./webpack/uglify');
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
 const common = merge([{
-    entry: "./src/index.js",
+    entry: './src/index.js',
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'public')
@@ -24,7 +24,7 @@ const common = merge([{
         },
         {
           test: /\.(jpg|png)$/,
-          loader: "file-loader",
+          loader: 'file-loader',
           options:{
             name: 'images/[name].[ext]'
           }
@@ -34,11 +34,11 @@ const common = merge([{
     plugins: [
       new HtmlWebpackPlugin({
         template: './src/index.html',
-        inject: "body"
+        inject: 'body'
       }),
       new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
+        $: 'jquery',
+        jQuery: 'jquery',
         Popper: ['popper.js', 'default']
       })
     ]

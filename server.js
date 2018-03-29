@@ -1,5 +1,6 @@
-var express = require('express');
-var app = express();
+import express from 'express'
+
+const app = express();
 app.use(express.static('public'));
 
 app.listen(3000, function () {

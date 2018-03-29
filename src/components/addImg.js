@@ -10,15 +10,15 @@ class AddImg extends React.Component {
 
 	getVisible(vis){
 		if(vis == true){
-			return {display: "block"}
+			return {display: 'block'}
 		}
 		else{
-			return {display: "none"}
+			return {display: 'none'}
 		}
 	}
 
 	toogleVisibleClick(){
-		var vis = this.props.visible;
+		let vis = this.props.visible;
 		this.props.showMenu(!vis);
 	}
 
@@ -33,16 +33,16 @@ class AddImg extends React.Component {
 	render(){
 		return(
 			<div>	
-				<div className="addImage" onClick={this.toogleVisibleClick}><span>Добавить изображение</span></div>
-		       	<div className="entryField" style={this.getVisible(this.props.visible)}>
+				<div className='addImage' onClick={this.toogleVisibleClick}><span>Добавить изображение</span></div>
+		       	<div className='entryField' style={this.getVisible(this.props.visible)}>
 		       		<div>
-		       			<span className="closed" onClick={this.toogleVisibleClick}>x</span>
-		       			<form onSubmit={this.handleSubmit} className="addImgForm">
+		       			<span className='closed' onClick={this.toogleVisibleClick}>x</span>
+		       			<form onSubmit={this.handleSubmit} className='addImgForm'>
 		       				<p>Введите Url изображения:</p>
-  							<input type = "text" ref="url" size="30" rows="1" /><br/>
+  							<input type = 'text' ref='url' size='30' rows='1' /><br/>
   							<p>Введите комментарий:</p>
-  							<input type = "text" ref="comment" size="30" rows="1" /><br/>
-  							<input type="submit" value="Изменить" />
+  							<input type = 'text' ref='comment' size='30' rows='1' /><br/>
+  							<input type='submit' value='Изменить' />
   						</form>
 		       		</div>
 		       	</div>
