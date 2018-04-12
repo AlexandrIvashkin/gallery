@@ -1,12 +1,14 @@
 gallery project
 ========================
-Creating a gallery of images. With the ability to add and delete images. Using technology DRAG AND DROP.
+Creating a gallery of images. With used single-page application. 
+With the ability to add and delete images. Using technology DRAG AND DROP.
 ___
 What technologies are used
 ---
 * Webpack, ReactJs, Redux.
 * Webpack-dev-server for developing.
 * Express for production.
+* Babel for use ES-2015.
 * Sass, bootstrap for style.
 * Jquery plugins (JqueryUi, lightbox) for used function drag and drop.
 ___
