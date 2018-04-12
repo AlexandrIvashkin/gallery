@@ -7,7 +7,7 @@ What technologies are used
 * Webpack, ReactJs, Redux.
 * Webpack-dev-server for developing.
 * Express for production.
-* Sass for style.
+* Sass, bootstrap for style.
 * Jquery plugins (JqueryUi, lightbox) for used function drag and drop.
 ___
 Use
